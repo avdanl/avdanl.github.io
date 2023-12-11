@@ -2,11 +2,12 @@
 title: DANL Project
 subtitle: "Data-Driven Mastery: Unlocking Business Potential"
 author: 
-  - Name 1
-  - Name 2
-  - Name 3
-  - Name 4
-  - Name 5
+  - Andrew VanDyk
+  - Noah Olson
+  - Andrew Sarafin
+  - Dominick Zittel
+  - Lucas Rosa
+  - Jayden Balcarczyk
 
 toc: true
 toc-title: "Table of Contents"

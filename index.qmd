@@ -1,5 +1,5 @@
 ---
-title: "YOUR NAME"
+title: "Andrew VanDyk"
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
   image: img/profile.png
@@ -9,10 +9,10 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://linkedin.com/andrewvandyk
     - icon: instagram
       text: Instagram
-      href: https://instagram.com
+      href: https://instagram.com/andrew_vandyk
     - icon: github
       text: GitHub
       href: https://github.com
@@ -26,7 +26,7 @@ about:
 ---
 
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
+Andrew VanDyk majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Andrew enjoys spending time unicycling and playing with her pet iguana.
 
 ## Education
 
