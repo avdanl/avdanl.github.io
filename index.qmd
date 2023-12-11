@@ -1,5 +1,5 @@
 ---
-title: "Andrew VanDyk"
+title: "Andrew VanDyk" 
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
   image: img/profile.png
