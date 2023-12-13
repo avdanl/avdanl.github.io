@@ -50,44 +50,82 @@ theme_set(theme_ipsum()+
 
 About this project :clap:
 
-```{r}
-1 + 1
-```
+This is my project for Data Analytics 200. In it I will be using the tokyo-2021-datset-v3.csv to show past winners of olympic games. The data shows 86 different countries and sorts them by medals won, by Gold, Silver, Bronze and overall total.This project is important because it can be used to predict future outcomes of the olypic games. By using this data, we can see who has won the most medals and use that to determine who will win in the future.
 
 
-# Data
+# Variable Description
 
-The data.frame `mpg` contains a subset of the fuel economy data that the EPA makes available on [https://fueleconomy.gov/](https://fueleconomy.gov/). It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. :oncoming_automobile:
+1. Rank: Where each country stands as opposed to other countries
+2. Team/NOC: Each country that has participated
+3. gold_medal: 1st place award for a country
+4. silver_medal: 2nd place award for a country
+5. bronze_medal: 3rd place award for a country
+6. total: How many awards for each participant/country
+7. continent: which continent each country belongs to
 
 
 ## Summary Statistics
 
 ```{r}
-mpg <- ggplot2::mpg
+oj <- read_csv('https://avdanl.github.io/data/tokyo-2021-dataset-v3.csv')
+nvars <- format(round(ncol(oj), 0), 
+                nsmall=0, 
+                big.mark=",") 
+nobs <- format(round(nrow(oj), 0), 
+                nsmall=0, 
+                big.mark=",")
 ```
 
+Rows: 93
+Columns:9
+
 ```{r}
-#| results: asis
-#| echo: false
-rmarkdown::paged_table(mpg) 
+# 
+url <- 'https://avdanl.github.io/data/tokyo-2021-dataset-v3.csv'
+data <- read.csv(url)
+
+# 
+print(data)
+
 ```
 
 
-```{r}
-skim(mpg) %>% 
-  select(-n_missing)
-```
-
-
-## MPG and a Type of Cars
-The following boxplot shows how the distribution of highway MPG (`hwy`) varies by a type of cars (`class`) :blue_car: :truck: :minibus:.
+## Top Ten Tokyo Olympics Teams
+The Following bargraph shows the different teams in the 2021 Tokyo Olympics, and how 
+many different medals they each have. The data could be used to show the odds of the next Olympic winner.
 
 
 ```{r}
-ggplot(data = mpg) +
-  geom_boxplot(aes(x = class, y = hwy, fill = class),
-               show.legend = F) +
-  labs(x = "Class", y = "Highway\nMPG") 
+# 
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+library(ggplot2)
+
+#
+medal_data <- data.frame(
+  Rank = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+  Team = c("United States of America", "People's Republic of China", "Japan", "Great Britain", "ROC", "Australia", "Netherlands", "France", "Germany", "Italy"),
+  Gold = c(39, 38, 27, 22, 20, 17, 10, 10, 10, 10),
+  Silver = c(41, 32, 14, 21, 28, 7, 12, 12, 11, 10),
+  Bronze = c(33, 18, 17, 22, 23, 22, 14, 11, 16, 20),
+  Total_Medals = c(113, 88, 58, 65, 71, 46, 36, 33, 37, 40),
+  Team_Code = c("USA", "CHN", "JPN", "GBR", "ROC", "AUS", "NED", "FRA", "GER", "ITA"),
+  Region = c("North America", "Asia", "Asia", "Europe", "Europe/Asia", "Australia", "Europe", "Europe", "Europe", "Europe")
+)
+
+# 
+ggplot(medal_data, aes(x = reorder(Team, Total_Medals), y = Total_Medals, fill = Region)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Top Ten Teams in Tokyo 2021 Olympics",
+       x = "Team",
+       y = "Total Medals",
+       fill = "Region") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+
 ```
 
 
