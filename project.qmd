@@ -128,4 +128,6 @@ ggplot(medal_data, aes(x = reorder(Team, Total_Medals), y = Total_Medals, fill =
 
 ```
 
+# Analysis
 
+From the above bar graph, we can see that the United States of America has by far won the most medals out of all countries, followed by China, ROC, Great Britain, Japan, Australia, Italy, Germany, Netherlands and France. All have won over 30 medals and are the top ten countries in the Olympics.
