@@ -50,7 +50,11 @@ theme_set(theme_ipsum()+
 
 About this project :clap:
 
-This is my project for Data Analytics 200. In it I will be using the tokyo-2021-datset-v3.csv to show past winners of olympic games. The data shows 86 different countries and sorts them by medals won, by Gold, Silver, Bronze and overall total.This project is important because it can be used to predict future outcomes of the olypic games. By using this data, we can see who has won the most medals and use that to determine who will win in the future.
+The Tokyo 2021 Olympics marked a significant global event, showcasing the pinnacle of athletic prowess and international sportsmanship. As part of a comprehensive analysis, this project delves into the performance of the top teams during the Tokyo Olympics, with a focus on visualizing their achievements using the R programming language.
+
+Through the lens of data visualization, this project aims to provide a compelling and insightful representation of the medal counts garnered by the leading nations. The dataset captures essential details such as the number of gold, silver, and bronze medals, offering a nuanced perspective on each team's overall success.
+
+Utilizing the versatile capabilities of R, a powerful statistical computing language, we employ various visualization techniques to present a comprehensive overview of the top-performing teams. From bar graphs to line charts, these visualizations are designed to convey not only the sheer quantity of medals but also the distribution of success across different medal categories.
 
 
 # Variable Description
@@ -128,6 +132,25 @@ ggplot(medal_data, aes(x = reorder(Team, Total_Medals), y = Total_Medals, fill =
 
 ```
 
+
+
+```
+
+
 # Analysis
 
 From the above bar graph, we can see that the United States of America has by far won the most medals out of all countries, followed by China, ROC, Great Britain, Japan, Australia, Italy, Germany, Netherlands and France. All have won over 30 medals and are the top ten countries in the Olympics.
+
+
+
+## Key Insights
+
+The United States dominated the medal count with the highest total, achieving a remarkable balance across gold, silver, and bronze categories.
+
+China and Japan secured the second and third positions, respectively, with significant total medal counts.
+
+The European nations of Great Britain, ROC, Netherlands, France, Germany, and Italy collectively performed well, occupying positions four through ten in the ranking.
+
+Australia represented Oceania and performed well, landing in the sixth position.
+
+The data provides a clear visual representation of the top-performing teams in the Tokyo 2021 Olympics, offering insights into the distribution of medals among nations.
